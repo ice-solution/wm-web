@@ -25,54 +25,55 @@ const HomePage = () => {
         }}
       >
         <Container maxWidth="lg">
-          <Box sx={{ maxWidth: '600px' }}>
+          <Box sx={{ maxWidth: '800px' }}>
             <Typography
-              variant="body1"
+              variant="h1"
               sx={{
-                color: '#1A365D',
-                fontWeight: '600',
-                mb: 2,
-                fontSize: '1.1rem',
+                color: 'white',
+                fontWeight: 'bold',
+                fontSize: { xs: '2.5rem', md: '4rem' },
+                mb: 3,
+                textShadow: '2px 2px 4px rgba(0,0,0,0.3)',
               }}
             >
               Transforming Passion into Airlines Profession
             </Typography>
-            <Box 
+            <Typography
+              variant="h2"
+              sx={{
+                color: 'white',
+                fontWeight: '600',
+                fontSize: { xs: '2rem', md: '3rem' },
+                mb: 4,
+                textShadow: '2px 2px 4px rgba(0,0,0,0.3)',
+              }}
+            >
+              Learn to Fly
+            </Typography>
+            <Button
               component={Link}
-              to="/flying"
-              sx={{ 
-                display: 'flex', 
-                alignItems: 'center', 
-                gap: 2,
-                textDecoration: 'none',
-                cursor: 'pointer',
+              to="/pilot-pathway"
+              variant="contained"
+              size="large"
+              endIcon={<ArrowForward />}
+              sx={{
+                backgroundColor: '#FF6B35',
+                color: 'white',
+                textTransform: 'none',
+                fontSize: '1.2rem',
+                fontWeight: 'bold',
+                px: 4,
+                py: 2,
+                borderRadius: '4px',
+                boxShadow: '0 4px 6px rgba(0,0,0,0.3)',
                 '&:hover': {
-                  opacity: 0.9,
+                  backgroundColor: '#e55a2b',
+                  boxShadow: '0 6px 8px rgba(0,0,0,0.4)',
                 },
               }}
             >
-              <Typography
-                variant="h1"
-                sx={{
-                  color: '#1A365D',
-                  fontWeight: 'bold',
-                  fontSize: { xs: '3rem', md: '4.5rem' },
-                }}
-              >
-                Learn to Fly
-              </Typography>
-              <IconButton
-                sx={{
-                  backgroundColor: '#1A365D',
-                  color: 'white',
-                  width: 56,
-                  height: 56,
-                  '&:hover': { backgroundColor: '#0f2542' },
-                }}
-              >
-                <ArrowForward />
-              </IconButton>
-            </Box>
+              Explore Pilot Pathways
+            </Button>
           </Box>
         </Container>
       </Box>
@@ -152,6 +153,79 @@ const HomePage = () => {
               </Grid>
             );
           })}
+        </Grid>
+      </Container>
+
+      {/* About Wingman */}
+      <Container maxWidth="lg" sx={{ py: 6 }}>
+        <Typography variant="h3" sx={{ color: '#1A365D', fontWeight: 'bold', mb: 2 }}>
+          Your Journey to the Sky Starts Here
+        </Typography>
+        <Typography sx={{ lineHeight: 1.8 }}>
+          We are a CASA approved Part 141/142 Flight School and an IATA Authorised Training Centre based at Jandakot
+          Airport, Perth. We specialise in professional pilot training, aviation education, flight experiences, and youth
+          programs. Designed and delivered by experienced airline pilots, our programs inspire young learners, provide
+          unforgettable discovery experiences, and prepare aspiring pilots with the skills and qualifications needed for a
+          successful aviation career. At Wingman, we don’t just teach flying — we help you spread your wings and achieve
+          your dreams in the sky.
+        </Typography>
+      </Container>
+
+      {/* Training Program Highlights */}
+      <Container maxWidth="lg" sx={{ py: 6 }}>
+        <Typography variant="h3" sx={{ color: '#1A365D', fontWeight: 'bold', mb: 3 }}>
+          Tailored Training for Every Ambition
+        </Typography>
+        <Grid container spacing={3}>
+          {[
+            {
+              title: 'Flexible CPL Training (CASA Part 141)',
+              desc:
+                'Non‑integrated CPL programme with minimum 200 flight hours, ideal for flexible pacing alongside work and life.',
+              link: '/pilot-pathway',
+            },
+            {
+              title: 'Expedited CPL Training (CASA Part 142)',
+              desc:
+                'Integrated CPL course with minimum 150 flight hours. CASA‑approved curriculum and robust Safety Management System.',
+              link: '/pilot-pathway',
+            },
+            {
+              title: 'International Standard Aviation Education (IATA)',
+              desc:
+                'FIRST IATA ATC in Australia. A range of IATA aviation courses adhering to international standards.',
+              link: '/airline-prep',
+            },
+          ].map((card, idx) => (
+            <Grid item xs={12} md={4} key={idx}>
+              <Box
+                sx={{
+                  p: 3,
+                  backgroundColor: '#f5f5f5',
+                  borderRadius: '8px',
+                  height: '100%',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                }}
+              >
+                <Box>
+                  <Typography variant="h6" sx={{ color: '#1A365D', fontWeight: 'bold', mb: 1 }}>
+                    {card.title}
+                  </Typography>
+                  <Typography sx={{ mb: 2 }}>{card.desc}</Typography>
+                </Box>
+                <Button
+                  component={Link}
+                  to={card.link}
+                  variant="contained"
+                  sx={{ backgroundColor: '#1A365D', textTransform: 'none', alignSelf: 'flex-start' }}
+                >
+                  Learn More
+                </Button>
+              </Box>
+            </Grid>
+          ))}
         </Grid>
       </Container>
 
@@ -252,9 +326,109 @@ const HomePage = () => {
         </Container>
       </Box>
 
+      {/* Our Story & Credentials Section */}
+      <Box sx={{ backgroundColor: 'white', py: 8 }}>
+        <Container maxWidth="lg">
+          <Typography
+            variant="h2"
+            sx={{
+              color: '#1A365D',
+              fontWeight: 'bold',
+              textAlign: 'center',
+              mb: 4,
+              fontSize: { xs: '2rem', md: '3rem' },
+            }}
+          >
+            Our Legacy & Expertise
+          </Typography>
+
+          <Grid container spacing={4} sx={{ mb: 6 }}>
+            <Grid item xs={12} md={6}>
+              <Typography
+                variant="body1"
+                sx={{
+                  fontSize: '1.1rem',
+                  lineHeight: 1.8,
+                  color: '#333',
+                  mb: 3,
+                }}
+              >
+                Founded by former Cathay Board Member, former Dragonair COO, former Pilots from Cathay, Dragonair, Singapore Airlines and SilkAir.
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  fontSize: '1.1rem',
+                  lineHeight: 1.8,
+                  color: '#333',
+                }}
+              >
+                Run by former Pilots from Cathay, Dragonair, HK Government, Singapore Airlines, SilkAir, Jetstar Asia, Singapore Air Force, Air Asia, Hainan Airlines and Qantas.
+              </Typography>
+            </Grid>
+
+            <Grid item xs={12} md={6}>
+              <Box>
+                <Typography
+                  variant="h4"
+                  sx={{
+                    color: '#1A365D',
+                    fontWeight: 'bold',
+                    mb: 2,
+                  }}
+                >
+                  Official Certifications:
+                </Typography>
+                <Box sx={{ mb: 4 }}>
+                  <Typography variant="body1" sx={{ mb: 1, color: '#333' }}>
+                    • Australian CASA Part 141 / 142 Flight School
+                  </Typography>
+                  <Typography variant="body1" sx={{ mb: 1, color: '#333' }}>
+                    • IATA Authorised Training Centre
+                  </Typography>
+                  <Typography variant="body1" sx={{ color: '#333' }}>
+                    • Representative of Embry-Riddle Aeronautical University
+                  </Typography>
+                </Box>
+
+                <Typography
+                  variant="h4"
+                  sx={{
+                    color: '#1A365D',
+                    fontWeight: 'bold',
+                    mb: 2,
+                  }}
+                >
+                  Our Locations:
+                </Typography>
+                <Typography variant="body1" sx={{ mb: 1, color: '#333' }}>
+                  • Headquarters in Perth, Jandakot Airport
+                </Typography>
+                <Typography variant="body1" sx={{ color: '#333' }}>
+                  • Satellites in Singapore and Hong Kong
+                </Typography>
+              </Box>
+            </Grid>
+          </Grid>
+        </Container>
+      </Box>
+
       {/* Our Network Section */}
       <Box sx={{ backgroundColor: '#f5f5f5', py: 8 }}>
         <Container maxWidth="xl">
+          <Typography
+            variant="h2"
+            sx={{
+              color: '#1A365D',
+              fontWeight: 'bold',
+              textAlign: 'center',
+              mb: 6,
+              fontSize: { xs: '2rem', md: '3rem' },
+            }}
+          >
+            Our Global Network & Certifications
+          </Typography>
+
           <Grid container spacing={4} alignItems="center">
             <Grid item xs={12} md={4}>
               <Typography

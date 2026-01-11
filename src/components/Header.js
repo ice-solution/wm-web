@@ -37,7 +37,7 @@ const Header = ({ showNav = true }) => {
           </Box>
 
           {showNav && (
-            <Box sx={{ display: 'flex', gap: 3, alignItems: 'center' }}>
+            <Box sx={{ display: 'flex', gap: 2, alignItems: 'center' }}>
               <Button
                 component={Link}
                 to="/home"
@@ -51,14 +51,25 @@ const Header = ({ showNav = true }) => {
               </Button>
               <Button
                 component={Link}
-                to="/story"
+                to="/pilot-pathway"
                 sx={{
                   color: isLaunchPage ? 'white' : '#1A365D',
                   textTransform: 'none',
-                  fontWeight: location.pathname === '/story' ? 'bold' : 'normal',
+                  fontWeight: location.pathname === '/pilot-pathway' ? 'bold' : 'normal',
                 }}
               >
-                Our Story
+                Pilot Pathway
+              </Button>
+              <Button
+                component={Link}
+                to="/flying"
+                sx={{
+                  color: isLaunchPage ? 'white' : '#1A365D',
+                  textTransform: 'none',
+                  fontWeight: location.pathname === '/flying' ? 'bold' : 'normal',
+                }}
+              >
+                Fleet
               </Button>
               <Button
                 component={Link}
@@ -69,23 +80,40 @@ const Header = ({ showNav = true }) => {
                   fontWeight: location.pathname === '/theory' ? 'bold' : 'normal',
                 }}
               >
+                Ground Theory
+              </Button>
+              <Button
+                component={Link}
+                to="/facilities"
+                sx={{
+                  color: isLaunchPage ? 'white' : '#1A365D',
+                  textTransform: 'none',
+                  fontWeight: location.pathname === '/facilities' ? 'bold' : 'normal',
+                }}
+              >
                 Facilities
               </Button>
               <Button
+                component={Link}
+                to="/experiences"
                 sx={{
                   color: isLaunchPage ? 'white' : '#1A365D',
                   textTransform: 'none',
+                  fontWeight: location.pathname === '/experiences' ? 'bold' : 'normal',
                 }}
               >
-                Accommodation
+                Experiences
               </Button>
               <Button
+                component={Link}
+                to="/airline-prep"
                 sx={{
                   color: isLaunchPage ? 'white' : '#1A365D',
                   textTransform: 'none',
+                  fontWeight: location.pathname === '/airline-prep' ? 'bold' : 'normal',
                 }}
               >
-                Other campuses
+                Airline Prep
               </Button>
               <Button
                 variant="contained"

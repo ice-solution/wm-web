@@ -8,6 +8,9 @@ import StoryPage from './pages/StoryPage';
 import FlyingPage from './pages/FlyingPage';
 import TheoryPage from './pages/TheoryPage';
 import ExperiencesPage from './pages/ExperiencesPage';
+import PilotPathwayPage from './pages/PilotPathwayPage';
+import FacilitiesPage from './pages/FacilitiesPage';
+import AirlinePrepPage from './pages/AirlinePrepPage';
 
 const theme = createTheme({
   palette: {
@@ -43,6 +46,9 @@ function App() {
           <Route path="/flying" element={<FlyingPage />} />
           <Route path="/theory" element={<TheoryPage />} />
           <Route path="/experiences" element={<ExperiencesPage />} />
+          <Route path="/pilot-pathway" element={<PilotPathwayPage />} />
+          <Route path="/facilities" element={<FacilitiesPage />} />
+          <Route path="/airline-prep" element={<AirlinePrepPage />} />
         </Routes>
       </Router>
     </ThemeProvider>
